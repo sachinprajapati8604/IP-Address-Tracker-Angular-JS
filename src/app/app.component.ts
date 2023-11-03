@@ -75,22 +75,31 @@ export class AppComponent {
   }
 
   setMap() {
-    this.map.flyTo(new L.LatLng(this.poi.lat, this.poi.lon), 16);
     const newLatLng = new L.LatLng(this.poi.lat, this.poi.lon);
+    this.map.setView(newLatLng, 16);
     this.marker.setLatLng(newLatLng);
   }
 
   getGeoData(searchval: any) {
-    this.apiService.getData(searchval).subscribe((data) => {
-      if (data) {
-        this.geodata = data;
-        this.poi.lat = this.geodata?.location?.lat;
-        this.poi.lon = this.geodata?.location?.lng;
-        // console.log(this.geodata);
-        this.setMap();
+    this.apiService.getData(searchval).subscribe(
+      (data) => {
+        if (data) {
+          this.geodata = data;
+          this.poi.lat = this.geodata?.location?.lat;
+          this.poi.lon = this.geodata?.location?.lng;
+          this.setMap();
+        }
+      },
+      (error) => {
+        // console.error("API request failed:", error);
+        Swal.fire({
+          icon: 'error',
+          text: `${error.statusText}`,
+        })
       }
-    })
+    );
   }
+
 
   ngOnInit() {
     this.getGeoData('');
