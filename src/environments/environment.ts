@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  geoapiKey: 'at_X46RiOetDUxfDblxoeyDH1zNE9c4x&ipAddress',
+
 };
 
 /*
