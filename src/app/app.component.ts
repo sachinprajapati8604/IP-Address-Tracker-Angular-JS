@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import * as L from 'leaflet';
 import { ApiCallService } from './api-call.service';
 import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -41,7 +43,11 @@ export class AppComponent {
     if (isValid) {
       this.getGeoData(formValues.searchInp);
     } else {
-      alert('Invalid IP address format');
+      // alert('Invalid IP address format');
+      Swal.fire({
+        icon: 'error',
+        text: 'Invalid IP address format',
+      })
       this.ipForm.reset();
     }
   }
@@ -91,6 +97,12 @@ export class AppComponent {
   }
   ngAfterViewInit() {
     this.initMap();
+  }
+
+  getDirection(lat: any, lng: any) {
+    window.open(
+      `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
+    )
   }
 
 }

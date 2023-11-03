@@ -97,6 +97,20 @@
   width: 100%;
   height: 100%;
 }
+.direction-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 11px;
+  outline: none;
+  border: none;
+  text-align: center;
+  background: #1870e2;
+  color: #fff;
+}
+.direction-btn span {
+  margin-left: 3px;
+}
 
 @media screen and (max-width: 680px) {
   .header {
@@ -134,5 +148,8 @@
   }
   .arrow-btn {
     width: 45px;
+  }
+  .direction-btn {
+    margin: 5px auto;
   }
 }

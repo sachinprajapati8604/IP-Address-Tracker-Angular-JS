@@ -1,27 +1,32 @@
-# IpAddressTracker
+## IP Address Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+This project is an IP address tracking application that provides information about a given IP address or domain. It leverages the ipify API (https://geo.ipify.org/) for geolocation data and utilizes the Leaflet library (https://leafletjs.com/) to display the IP location on a map.
 
-## Development server
+#### Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+IP Address Details: Enter an IP address or domain, and the application retrieves its geolocation details, including country, region, city, postal code, and ISP.
 
-## Code scaffolding
+Validation: The input field is equipped with validation to ensure you enter a valid IP address or domain and used sweetalert2 for the wrong input alert.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Direction Integration: Easily navigate to the location by clicking the "Direction" button, which redirects you to Google Maps for directions.
 
-## Build
+Responsive Design: The application is designed to provide a great user experience on both mobile and desktop devices, with media queries to optimize the layout.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Live Demo
 
-## Running unit tests
+You can try the IP Address Tracker live on https://sp-ipaddress-tracker.netlify.app/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Setup and Usage
 
-## Running end-to-end tests
+To set up and run this project locally, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Clone this repository.
+Install the project's dependencies using npm install.
+Start the development server with npm start.
+The application will run locally on http://localhost:4200/. Enter an IP address or domain to begin tracking.
 
-## Further help
+## Technologies Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular
+Leaflet
+ipify API
