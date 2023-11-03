@@ -86,7 +86,7 @@ export class AppComponent {
         this.geodata = data;
         this.poi.lat = this.geodata?.location?.lat;
         this.poi.lon = this.geodata?.location?.lng;
-        console.log(this.geodata);
+        // console.log(this.geodata);
         this.setMap();
       }
     })
